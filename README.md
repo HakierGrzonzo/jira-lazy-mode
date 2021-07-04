@@ -1,0 +1,2 @@
+# jira-lazy-mode
+#TODO
