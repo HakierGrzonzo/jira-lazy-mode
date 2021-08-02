@@ -1,0 +1,110 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{inputenc}[utf8]
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[polish]{babel}
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{tikz}
+	\usetikzlibrary{arrows}
+	\usetikzlibrary{patterns}
+	\usetikzlibrary{decorations.pathmorphing}
+\usepackage{pgf}
+\usepackage[section]{placeins}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
+\graphicspath{ {./ilustracje/} }
+\title{Rejest Godzin}
+\author{Grzegorz Koperwas}
+\date{\today}
+
+
+\usepackage{polski}
+\usepackage[polish]{babel} 
+\usepackage{indentfirst}
+\usepackage{icomma} 
+
+\brokenpenalty=1000
+\clubpenalty=1000
+\widowpenalty=1000    
+
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}.}
+\renewcommand\thesubsubsection{\arabic{subsubsection}.}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+\rfoot{}
+\lfoot{Generator timesheetów Grzegorza Koperwas}
+\rhead{}
+\lhead{Wygenerowano \today}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+\begin{center}
+    \begin{LARGE}
+    Rejestr Godzin Realizacji zlecenia
+    \end{LARGE}
+
+    \vspace{10mm}
+
+    Grzegorz Koperwas
+
+    \vspace{-4mm}
+
+    ..........................................................
+
+    /Imię i nazwisko zleceniobiorcy/
+\end{center}
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    Dzień realizacji & Liczba godzin & Uwagi \\\hline\hline
+    {% for line in lines%}
+    {{line.date}} & {{line.amount}} & \\\hline
+    {% endfor %}
+    Suma: & {{total}} & \\\hline
+    \end{tabular}
+    \centering
+\end{table}
+
+
+\vfill
+
+\begin{minipage}{.5\textwidth}
+..........................................
+
+pieczęć i podpis zleceniodawcy
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \begin{flushright}
+..........................................
+
+pieczęć i podpis zleceniobiorcy
+    \end{flushright}
+\end{minipage}
+\end{document}
