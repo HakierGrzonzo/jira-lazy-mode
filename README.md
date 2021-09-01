@@ -1,7 +1,7 @@
 # jira-lazy-mode
 ## how to use
 
-- install packages with `pip install jira jinja2 PythonGit
+- install packages with `pip install jira jinja2 PythonGit`
 - create file `secret.json` that looks like this:
 
 ```json
